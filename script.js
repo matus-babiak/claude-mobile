@@ -8,62 +8,8 @@ function updateProgress() {
   const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
   progressBar.style.width = `${pct}%`;
 }
-
-/* Nav background on scroll */
-const nav = document.getElementById("nav");
-function updateNav() {
-  nav.classList.toggle("scrolled", window.scrollY > 20);
-}
-
-window.addEventListener(
-  "scroll",
-  () => {
-    updateProgress();
-    updateNav();
-  },
-  { passive: true }
-);
+window.addEventListener("scroll", updateProgress, { passive: true });
 updateProgress();
-updateNav();
-
-/* Mobile menu toggle */
-const navToggle = document.getElementById("navToggle");
-const navLinks = document.getElementById("navLinks");
-
-navToggle.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("open");
-  navToggle.classList.toggle("open", isOpen);
-  navToggle.setAttribute("aria-expanded", String(isOpen));
-});
-
-navLinks.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    navToggle.classList.remove("open");
-    navToggle.setAttribute("aria-expanded", "false");
-  });
-});
-
-/* Scrollspy: highlight active nav link */
-const sections = document.querySelectorAll("main section[id]");
-const navLinkMap = new Map();
-document.querySelectorAll(".nav-link").forEach((link) => {
-  navLinkMap.set(link.getAttribute("href").slice(1), link);
-});
-
-const spyObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        navLinkMap.forEach((link) => link.classList.remove("active"));
-        const activeLink = navLinkMap.get(entry.target.id);
-        if (activeLink) activeLink.classList.add("active");
-      }
-    });
-  },
-  { rootMargin: "-45% 0px -45% 0px" }
-);
-sections.forEach((section) => spyObserver.observe(section));
 
 /* Reveal on scroll */
 const revealObserver = new IntersectionObserver(
@@ -79,7 +25,7 @@ const revealObserver = new IntersectionObserver(
 );
 document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
-/* Animated stat counters */
+/* Animated stat counters (trust bar) */
 const countObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -102,6 +48,73 @@ const countObserver = new IntersectionObserver(
   { threshold: 0.5 }
 );
 document.querySelectorAll(".stat-num").forEach((el) => countObserver.observe(el));
+
+/* Benefits tabs */
+const tabButtons = document.querySelectorAll(".tab-btn");
+const tabPanels = document.querySelectorAll(".tab-panel");
+
+tabButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const target = btn.dataset.tab;
+
+    tabButtons.forEach((b) => {
+      b.classList.remove("active");
+      b.setAttribute("aria-selected", "false");
+    });
+    btn.classList.add("active");
+    btn.setAttribute("aria-selected", "true");
+
+    tabPanels.forEach((panel) => {
+      panel.classList.toggle("active", panel.dataset.panel === target);
+    });
+  });
+});
+
+/* FAQ accordion */
+document.querySelectorAll(".faq-item").forEach((item) => {
+  const question = item.querySelector(".faq-question");
+  const answer = item.querySelector(".faq-answer");
+
+  question.addEventListener("click", () => {
+    const isOpen = item.classList.contains("open");
+
+    document.querySelectorAll(".faq-item.open").forEach((openItem) => {
+      if (openItem !== item) {
+        openItem.classList.remove("open");
+        openItem.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+        openItem.querySelector(".faq-answer").style.maxHeight = null;
+      }
+    });
+
+    item.classList.toggle("open", !isOpen);
+    question.setAttribute("aria-expanded", String(!isOpen));
+    answer.style.maxHeight = !isOpen ? `${answer.scrollHeight}px` : null;
+  });
+});
+
+/* Urgency countdown (demo date — replace with a real, truthful deadline) */
+const countdownEl = document.getElementById("countdown");
+if (countdownEl) {
+  const deadline = new Date();
+  deadline.setDate(deadline.getDate() + 4);
+  deadline.setHours(23, 59, 59, 0);
+
+  function updateCountdown() {
+    const diff = deadline.getTime() - Date.now();
+    if (diff <= 0) {
+      countdownEl.textContent = "00:00:00:00";
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    const pad = (n) => String(n).padStart(2, "0");
+    countdownEl.textContent = `${pad(d)}:${pad(h)}:${pad(m)}:${pad(s)}`;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+}
 
 /* Custom cursor + hero parallax (fine pointers only) */
 if (window.matchMedia("(pointer: fine)").matches) {

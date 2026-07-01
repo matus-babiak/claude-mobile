@@ -3,39 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tvoje Meno — Portfólio</title>
-  <meta name="description" content="Osobná stránka vytvorená s láskou k detailu." />
+  <title>Rétorika Akadémia — Postav sa pred kohokoľvek bez trasúcich sa kolien</title>
+  <meta name="description" content="Kurz rétoriky a verejného vystupovania. Ukážková sales page štruktúra." />
   <link rel="icon" href="data:," />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- ⚠️ DEMO ŠABLÓNA: obsah nižšie je ilustračný príklad (kurz rétoriky) podľa interného
+       manuálu na tvorbu sales page. Pred zverejnením nahraď VŠETKO vlastnými, pravdivými
+       údajmi — headline, čísla, referencie, ceny, garanciu aj kontakt. -->
+  <div class="demo-banner">
+    🧪 DEMO ŠABLÓNA — obsah je ilustračný príklad. Nahraď ho vlastnými, overiteľnými údajmi pred spustením.
+  </div>
+
   <div class="progress-bar" id="progressBar"></div>
   <div class="cursor-dot" id="cursorDot"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
-  <header class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#home" class="logo">Tvoje<span>Meno</span></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="nav-link" data-link>Domov</a></li>
-        <li><a href="#about" class="nav-link" data-link>O mne</a></li>
-        <li><a href="#work" class="nav-link" data-link>Projekty</a></li>
-        <li><a href="#contact" class="nav-link" data-link>Kontakt</a></li>
-      </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Otvoriť menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+  <!-- 1 stránka = 1 akcia -> žiadne navigačné menu, len logo + jedno CTA -->
+  <header class="topbar" id="topbar">
+    <div class="topbar-inner">
+      <a href="#hero" class="logo">Rétorika<span>Akadémia</span></a>
+      <a href="mailto:info@tvojadomena.sk?subject=Chcem%20sa%20prihlásiť%20na%20kurz" class="btn btn-primary btn-sm cta-btn">
+        Chcem sa prihlásiť
+      </a>
     </div>
   </header>
 
   <main>
-    <section id="home" class="hero">
+    <!-- PRINCÍP 01 — HEADLINE -->
+    <section id="hero" class="hero">
       <div class="hero-blobs" aria-hidden="true">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
@@ -44,93 +47,546 @@
       </div>
 
       <div class="hero-content">
-        <p class="hero-eyebrow reveal">Vitaj na mojom webe</p>
+        <p class="hero-eyebrow reveal">Kurz rétoriky a verejného vystupovania</p>
         <h1 class="hero-title">
-          <span class="reveal-line"><span class="reveal">Ahoj, volám sa</span></span>
-          <span class="reveal-line"><span class="reveal gradient-text">Tvoje Meno</span></span>
+          <span class="reveal-line"><span class="reveal">Postavíme ťa pred 800 ľudí na pódium,</span></span>
+          <span class="reveal-line"><span class="reveal gradient-text">aj keď sa ti dnes trasú kolená</span></span>
         </h1>
         <p class="hero-subtitle reveal">
-          Toto je moja úplne prvá webová stránka — staviam ju priamo z telefónu
-          a postupne ju budem dopĺňať o vlastný obsah.
+          Za 8 týždňov prejdeš z „radšej nič nepoviem na porade" do „viem presne, čo a ako povedať —
+          a ľudia ma počúvajú." Pomohli sme 300+ ľuďom, ktorí sa báli otvoriť ústa.
         </p>
         <div class="hero-cta reveal">
-          <a href="#work" class="btn btn-primary">Pozri projekty</a>
-          <a href="#contact" class="btn btn-ghost">Kontaktuj ma</a>
+          <a href="mailto:info@tvojadomena.sk?subject=Konzultácia%20-%20kurz%20rétoriky" class="btn btn-primary cta-btn">
+            Zarezervovať bezplatný hovor
+          </a>
+          <a href="#video" class="btn btn-ghost">Pozrieť video</a>
         </div>
+        <p class="hero-micro reveal">Bez záväzkov · Odpoviem do 24 hodín · 300+ absolventov</p>
       </div>
 
-      <a href="#about" class="scroll-indicator" aria-label="Posunúť nižšie">
+      <a href="#video" class="scroll-indicator" aria-label="Posunúť nižšie">
         <span></span>
       </a>
     </section>
 
-    <section id="about" class="section about">
+    <!-- Trust bar s číslami (posilňuje autoritu hneď pod headline) -->
+    <section class="trust-bar reveal">
+      <div class="trust-item">
+        <span class="stat-num" data-count="300">0</span><span class="trust-suffix">+</span>
+        <span class="trust-label">absolventov</span>
+      </div>
+      <div class="trust-item">
+        <span class="stat-num" data-count="49">0</span><span class="trust-suffix">/10</span>
+        <span class="trust-label">priemerné hodnotenie</span>
+      </div>
+      <div class="trust-item">
+        <span class="stat-num" data-count="8">0</span>
+        <span class="trust-label">rokov praxe</span>
+      </div>
+      <div class="trust-item">
+        <span class="stat-num" data-count="94">0</span><span class="trust-suffix">%</span>
+        <span class="trust-label">dokončí kurz</span>
+      </div>
+    </section>
+
+    <!-- PRINCÍP 02 — PREDAJNÉ VIDEO -->
+    <section id="video" class="section">
       <div class="section-inner">
-        <p class="section-label reveal">O mne</p>
-        <h2 class="section-title reveal">Pár slov na úvod</h2>
-        <div class="about-grid">
-          <p class="about-text reveal">
-            Sem príde tvoj text — kto si, čím sa zaoberáš a čo ťa baví.
-            Táto sekcia je pripravená a čaká len na tvoj obsah.
-          </p>
-          <div class="stats reveal">
-            <div class="stat">
-              <span class="stat-num" data-count="3">0</span>
-              <span class="stat-label">roky skúseností</span>
+        <p class="section-label reveal">Kto som a pre koho to je</p>
+        <h2 class="section-title reveal">3 minúty, ktoré ti ušetria roky váhania</h2>
+        <div class="video-frame reveal">
+          <!-- TODO: nahraď <div class="video-placeholder"> reálnym embedom, napr.
+               <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe> -->
+          <div class="video-placeholder">
+            <button class="play-btn" type="button" aria-label="Prehrať video">
+              <svg width="22" height="26" viewBox="0 0 22 26" fill="none"><path d="M0 0L22 13L0 26V0Z" fill="currentColor"/></svg>
+            </button>
+            <p class="video-caption">Sem vlož osobné video (3–10 min): kto si → pre koho to je → aký bude výsledok → výzva na akciu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCÍP 03 — PAIN POINTS -->
+    <section id="problem" class="section alt">
+      <div class="section-inner">
+        <p class="section-label reveal">Poznáš to?</p>
+        <h2 class="section-title reveal">Presne toto počúvam na každej konzultácii</h2>
+        <div class="pain-grid">
+          <div class="pain-card reveal">
+            <span class="pain-icon">😣</span>
+            <p>Na porade máš v hlave presnú myšlienku, no keď máš prehovoriť, slová sa niekde stratia a povieš len polovicu.</p>
+          </div>
+          <div class="pain-card reveal">
+            <span class="pain-icon">💸</span>
+            <p>Sleduješ kolegu, ktorý hovorí polovicu toho, čo vieš ty — a presviedča celú miestnosť.</p>
+          </div>
+          <div class="pain-card reveal">
+            <span class="pain-icon">😰</span>
+            <p>Prezentáciu odkladáš týždeň dopredu a posledné dve noci nespíš od stresu.</p>
+          </div>
+          <div class="pain-card reveal">
+            <span class="pain-icon">🔁</span>
+            <p>Skúšal si online kurzy a knihy o rétorike, no v reálnej miestnosti ti to isto nefunguje.</p>
+          </div>
+        </div>
+        <p class="pain-conclusion reveal">Presne pre teba som postavil tento kurz.</p>
+      </div>
+    </section>
+
+    <!-- Prvé CTA -->
+    <section class="cta-strip reveal">
+      <p>Ak sa v tomto spoznávaš, poďme sa o tom 20 minút porozprávať.</p>
+      <a href="mailto:info@tvojadomena.sk?subject=Konzultácia%20-%20kurz%20rétoriky" class="btn btn-primary cta-btn">
+        Zarezervovať bezplatný hovor
+      </a>
+      <p class="micro">Bez záväzkov. Odpoviem do 24 hodín.</p>
+    </section>
+
+    <!-- PRINCÍP 04 — RIEŠENIE + PRINCÍP 09 (benefity ako taby) -->
+    <section id="solution" class="section">
+      <div class="section-inner">
+        <p class="section-label reveal">Riešenie</p>
+        <h2 class="section-title reveal">Čo presne sa zmení, keď absolvuješ kurz</h2>
+        <p class="section-lead reveal">
+          Vďaka štruktúrovanému tréningu prestaneš improvizovať pod tlakom. To znamená, že na
+          poradách, prezentáciách aj v neformálnom rozhovore vieš presne, čo povedať — a povieš to tak,
+          aby to malo váhu.
+        </p>
+
+        <!-- Benefity: tabs rozdelené do 3 prehľadných kategórií -->
+        <div class="benefits-tabs reveal">
+          <div class="tabs-nav" role="tablist" aria-label="Kategórie benefitov">
+            <button class="tab-btn active" role="tab" aria-selected="true" data-tab="skills">Zručnosti</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="confidence">Sebavedomie</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-tab="career">Kariéra</button>
+          </div>
+
+          <div class="tabs-panels">
+            <div class="tab-panel active" data-panel="skills" role="tabpanel">
+              <div class="benefit-grid">
+                <div class="benefit-item">
+                  <span class="benefit-icon">🎯</span>
+                  <h3>Štruktúra prejavu za 60 sekúnd</h3>
+                  <p>Naučíš sa techniku, ktorou si za minútu poskladáš odkaz aj bez prípravy.</p>
+                </div>
+                <div class="benefit-item">
+                  <span class="benefit-icon">🗣️</span>
+                  <h3>Práca s hlasom a tempom</h3>
+                  <p>Prestaneš „drmoliť" — naučíš sa pauzy, tempo aj dôraz, ktoré udržia pozornosť.</p>
+                </div>
+                <div class="benefit-item">
+                  <span class="benefit-icon">🧠</span>
+                  <h3>Argumentácia pod tlakom</h3>
+                  <p>Zvládneš reagovať na nepríjemné otázky bez toho, aby si stratil niť.</p>
+                </div>
+              </div>
             </div>
-            <div class="stat">
-              <span class="stat-num" data-count="12">0</span>
-              <span class="stat-label">projekty</span>
+
+            <div class="tab-panel" data-panel="confidence" role="tabpanel">
+              <div class="benefit-grid">
+                <div class="benefit-item">
+                  <span class="benefit-icon">💪</span>
+                  <h3>Koniec trasúcich sa rúk</h3>
+                  <p>Praktické techniky na zvládnutie trémy priamo pred vystúpením, nie len teória.</p>
+                </div>
+                <div class="benefit-item">
+                  <span class="benefit-icon">🪞</span>
+                  <h3>Reálny nácvik, nie len video</h3>
+                  <p>Vystúpiš naživo pred skupinou už v 3. týždni — bezpečne, s okamžitou spätnou väzbou.</p>
+                </div>
+                <div class="benefit-item">
+                  <span class="benefit-icon">🌱</span>
+                  <h3>Trvalá zmena, nie jednorazový trik</h3>
+                  <p>Po kurze vieš prečo to funguje, takže si sebavedomie udržíš aj o rok.</p>
+                </div>
+              </div>
             </div>
-            <div class="stat">
-              <span class="stat-num" data-count="100">0</span>
-              <span class="stat-label">% nadšenia</span>
+
+            <div class="tab-panel" data-panel="career" role="tabpanel">
+              <div class="benefit-grid">
+                <div class="benefit-item">
+                  <span class="benefit-icon">📈</span>
+                  <h3>Viditeľnosť v tíme</h3>
+                  <p>Tvoje nápady si všimnú, pretože ich vieš podať tak, aby zaujali.</p>
+                </div>
+                <div class="benefit-item">
+                  <span class="benefit-icon">🎤</span>
+                  <h3>Pripravenosť na veľké príležitosti</h3>
+                  <p>Konferencia, pohovor, prezentácia pred vedením — zvládneš to bez paniky.</p>
+                </div>
+                <div class="benefit-item">
+                  <span class="benefit-icon">🤝</span>
+                  <h3>Silnejšia osobná značka</h3>
+                  <p>Ľudia si ťa zapamätajú ako niekoho, kto vie, o čom hovorí.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="work" class="section work">
+    <!-- PRINCÍP 05 — DESIRED OUTCOME -->
+    <section class="section alt">
       <div class="section-inner">
-        <p class="section-label reveal">Projekty</p>
-        <h2 class="section-title reveal">Čo som vytvoril</h2>
-        <div class="work-grid">
-          <article class="work-card reveal">
-            <div class="work-card-glow"></div>
-            <span class="work-num">01</span>
-            <h3>Projekt jeden</h3>
-            <p>Krátky popis projektu doplníš neskôr.</p>
-          </article>
-          <article class="work-card reveal">
-            <div class="work-card-glow"></div>
-            <span class="work-num">02</span>
-            <h3>Projekt dva</h3>
-            <p>Krátky popis projektu doplníš neskôr.</p>
-          </article>
-          <article class="work-card reveal">
-            <div class="work-card-glow"></div>
-            <span class="work-num">03</span>
-            <h3>Projekt tri</h3>
-            <p>Krátky popis projektu doplníš neskôr.</p>
-          </article>
+        <p class="section-label reveal">O 3 mesiace</p>
+        <h2 class="section-title reveal">Predstav si tú poradu o tri mesiace</h2>
+        <p class="outcome-text reveal">
+          Niekto položí ťažkú otázku a miestnosť stíchne. Ty sa nadýchneš, vieš presne, ako začať vetu,
+          a hovoríš pokojne — bez toho zvláštneho tlaku v hrudi. Po porade za tebou príde kolega:
+          „Ako si to podal, bolo super." Ty už to nevnímaš ako výnimku. Je to tvoj nový štandard.
+        </p>
+      </div>
+    </section>
+
+    <!-- PRINCÍP 06 — PREDSTAVENIE PRODUKTU -->
+    <section id="product" class="section">
+      <div class="section-inner">
+        <p class="section-label reveal">Čo presne dostaneš</p>
+        <h2 class="section-title reveal">Obsah kurzu do detailu</h2>
+        <div class="product-grid reveal">
+          <ul class="product-list">
+            <li>6 modulov, 18 lekcií, 7 hodín videoobsahu</li>
+            <li>4 živé tréningové stretnutia v malej skupine (max 8 ľudí)</li>
+            <li>Pracovné listy a scenáre ku každej lekcii (PDF)</li>
+            <li>Prístup do súkromnej komunity absolventov</li>
+            <li>Mesačný live Q&A priamo so mnou</li>
+            <li>Nahrávka vlastného vystúpenia pred/po s rozborom</li>
+          </ul>
+          <div class="product-note">
+            <p>Prístup dostaneš okamžite po platbe. Prvý modul zvládneš cez víkend, celý kurz trvá 8 týždňov.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section contact">
-      <div class="section-inner contact-inner">
-        <p class="section-label reveal">Kontakt</p>
-        <h2 class="section-title reveal">Poďme sa spojiť</h2>
-        <p class="contact-text reveal">Napíš mi na email alebo cez sociálne siete.</p>
-        <a href="mailto:tvoj@email.sk" class="btn btn-primary reveal">Napíš mi</a>
+    <!-- PRINCÍP 07 — DÔKAZY A PRÍPADOVÉ ŠTÚDIE -->
+    <section id="proof" class="section alt">
+      <div class="section-inner">
+        <p class="section-label reveal">Výsledky absolventov</p>
+        <h2 class="section-title reveal">Toto sa stalo, keď to skúsili</h2>
+        <div class="case-grid">
+          <div class="case-card reveal">
+            <span class="case-tag">ukážkový príklad</span>
+            <h3>Peter, 41, produktový manažér</h3>
+            <p>Pred kurzom sa vyhýbal každej prezentácii pred vedením. Tri mesiace po kurze viedol
+              kickoff pre 60-člennú divíziu bez poznámok.</p>
+          </div>
+          <div class="case-card reveal">
+            <span class="case-tag">ukážkový príklad</span>
+            <h3>Zuzana, 29, konzultantka</h3>
+            <p>Zvýšila si sadzbu o 30 %, pretože klientske hovory zrazu pôsobili sebavedomo a jasne.</p>
+          </div>
+          <div class="case-card reveal">
+            <span class="case-tag">ukážkový príklad</span>
+            <h3>Marek, 35, živnostník</h3>
+            <p>Prvýkrát v živote prednášal na konferencii pred 200 ľuďmi — bez trasúcich sa rúk.</p>
+          </div>
+        </div>
+        <p class="proof-note">↑ Toto sú ilustračné príklady. Nahraď ich skutočnými menami, fotkami a číslami svojich klientov.</p>
+      </div>
+    </section>
+
+    <!-- PRINCÍP 09 — MECHANIZMUS -->
+    <section id="mechanism" class="section">
+      <div class="section-inner">
+        <p class="section-label reveal">Ako to funguje</p>
+        <h2 class="section-title reveal">4 kroky od prihlásenia po výsledok</h2>
+        <div class="steps-grid">
+          <div class="step-card reveal">
+            <span class="step-num">01</span>
+            <h3>Vstupný hovor (20 min)</h3>
+            <p>Spoznáme tvoju situáciu a ciele, aby kurz sedel presne na teba.</p>
+          </div>
+          <div class="step-card reveal">
+            <span class="step-num">02</span>
+            <h3>Základy (týždeň 1–2)</h3>
+            <p>Štruktúra prejavu, práca s hlasom, prvé cvičenia na kameru.</p>
+          </div>
+          <div class="step-card reveal">
+            <span class="step-num">03</span>
+            <h3>Živý nácvik (týždeň 3–6)</h3>
+            <p>Vystupuješ pred malou skupinou, dostávaš okamžitú spätnú väzbu.</p>
+          </div>
+          <div class="step-card reveal">
+            <span class="step-num">04</span>
+            <h3>Ostrá skúška (týždeň 7–8)</h3>
+            <p>Reálne vystúpenie pred publikom podľa tvojho výberu — porada, konferencia, video.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCÍP 10 — DIFERENCIÁCIA -->
+    <section class="section alt">
+      <div class="section-inner">
+        <p class="section-label reveal">Prečo práve tento kurz</p>
+        <h2 class="section-title reveal">Čím sa líšime od bežných kurzov rétoriky</h2>
+        <div class="diff-grid">
+          <div class="diff-card reveal">
+            <h3>Malé skupiny, nie webinár pre 500 ľudí</h3>
+            <p>Max. 8 ľudí v tréningovej skupine, takže dostaneš skutočnú spätnú väzbu, nie všeobecné rady.</p>
+          </div>
+          <div class="diff-card reveal">
+            <h3>Nahrávka pred/po</h3>
+            <p>Uvidíš vlastný pokrok na videu — nie len pocit, ale dôkaz, ktorý si môžeš pozrieť.</p>
+          </div>
+          <div class="diff-card reveal">
+            <h3>8 rokov praxe v korporátnom aj živnostenskom prostredí</h3>
+            <p>Rozumiem rozdielu medzi poradou vo firme a prezentáciou pre klienta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCÍP 11 — GARANCIA -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="guarantee-box reveal">
+          <span class="guarantee-badge">🛡️</span>
+          <div>
+            <h3>14-dňová garancia vrátenia peňazí</h3>
+            <p>Ak po prvých dvoch moduloch usúdiš, že to nie je pre teba, napíš mi a vrátim ti celú sumu.
+              Bez otázok. Doteraz to využilo menej ako 4 % účastníkov.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCÍP 12 — CENOVÉ BALÍČKY -->
+    <section id="pricing" class="section alt">
+      <div class="section-inner">
+        <p class="section-label reveal">Cenník</p>
+        <h2 class="section-title reveal">Vyber si úroveň, ktorá ti sedí</h2>
+        <div class="pricing-grid">
+          <div class="price-card reveal">
+            <h3>Základ</h3>
+            <p class="price">149 €</p>
+            <ul>
+              <li>6 video modulov (7 h obsahu)</li>
+              <li>Pracovné listy PDF</li>
+              <li>Prístup do komunity</li>
+            </ul>
+            <a href="mailto:info@tvojadomena.sk?subject=Objednávka%20-%20Základ" class="btn btn-ghost cta-btn">Vybrať Základ</a>
+          </div>
+          <div class="price-card featured reveal">
+            <span class="price-badge">★ Odporúčané</span>
+            <h3>Profesionál</h3>
+            <p class="price">349 €</p>
+            <ul>
+              <li>Všetko zo Základu</li>
+              <li>4 živé tréningové stretnutia</li>
+              <li>Nahrávka vystúpenia pred/po s rozborom</li>
+              <li>Mesačný live Q&A</li>
+            </ul>
+            <a href="mailto:info@tvojadomena.sk?subject=Objednávka%20-%20Profesionál" class="btn btn-primary cta-btn">Vybrať Profesionál</a>
+          </div>
+          <div class="price-card reveal">
+            <h3>VIP Mentoring</h3>
+            <p class="price">890 €</p>
+            <ul>
+              <li>Všetko z Profesionála</li>
+              <li>4× individuálny hovor 1:1</li>
+              <li>Osobná príprava na konkrétne vystúpenie</li>
+            </ul>
+            <a href="mailto:info@tvojadomena.sk?subject=Objednávka%20-%20VIP" class="btn btn-ghost cta-btn">Vybrať VIP</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCÍP 13 — RECENZIE -->
+    <section id="reviews" class="section">
+      <div class="section-inner">
+        <p class="section-label reveal">Recenzie</p>
+        <h2 class="section-title reveal">Čo hovoria absolventi</h2>
+        <div class="review-grid">
+          <div class="review-card reveal">
+            <span class="case-tag">ukážkový príklad</span>
+            <p>„Prišla som s 18-ročným strachom z rozprávania pred ľuďmi. Po 8 týždňoch som prvýkrát
+              v živote viedla školenie pre 40 kolegov a nezajakla som sa ani raz."</p>
+            <p class="review-author">— Martina, 34, HR manažérka</p>
+          </div>
+          <div class="review-card reveal">
+            <span class="case-tag">ukážkový príklad</span>
+            <p>„Nečakal som živé cvičenia — spočiatku ma desili viac než samotný problém. Presne to mi
+              ale pomohlo najviac."</p>
+            <p class="review-author">— Tomáš, 27, obchodník</p>
+          </div>
+          <div class="review-card reveal">
+            <span class="case-tag">ukážkový príklad</span>
+            <p>„Za tri mesiace som z niekoho, kto mlčal na poradách, prešla na osobu, ktorú si vedenie
+              pýta na prezentácie pred klientmi."</p>
+            <p class="review-author">— Lucia, 31, projektová manažérka</p>
+          </div>
+        </div>
+        <p class="proof-note">↑ Nahraď reálnymi menami, fotkami a súhlasom klientov (ideálne so screenshotom správy).</p>
+      </div>
+    </section>
+
+    <!-- PRINCÍP 15 — BONUS -->
+    <section class="section alt">
+      <div class="section-inner">
+        <div class="bonus-box reveal">
+          <span class="bonus-badge">🎁 Bonus pri objednaní tento týždeň</span>
+          <h3>Osobný rozbor tvojho najbližšieho vystúpenia (hodnota 150 €)</h3>
+          <p>Pošli mi nahrávku alebo scenár svojej najbližšej prezentácie a natočím ti video so
+            3 konkrétnymi úpravami, ktoré urobíš ešte pred vystúpením.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCÍP 16 — AUTORITA -->
+    <section class="section">
+      <div class="section-inner">
+        <p class="section-label reveal">O lektorovi</p>
+        <h2 class="section-title reveal">Prečo mi môžeš veriť</h2>
+        <p class="section-lead reveal">
+          8 rokov vediem tréningy verejného vystupovania pre firmy aj jednotlivcov. Pracoval som so
+          300+ klientmi naprieč korporátnym aj živnostenským prostredím. Prednášam na workshopoch
+          o komunikácii a moja metodika vychádza z reálnej praxe, nie len z teórie.
+        </p>
+      </div>
+    </section>
+
+    <!-- PRINCÍP 17 — PRE KOHO -->
+    <section class="section alt">
+      <div class="section-inner">
+        <p class="section-label reveal">Pre koho je toto</p>
+        <h2 class="section-title reveal">Je tento kurz pre teba?</h2>
+        <div class="audience-grid">
+          <div class="audience-col yes reveal">
+            <h3>Áno, ak si:</h3>
+            <ul>
+              <li>Manažér alebo špecialista, ktorý mlčí na poradách, aj keď má čo povedať</li>
+              <li>Živnostník, ktorý prezentuje klientom a chce pôsobiť sebavedomejšie</li>
+              <li>Niekto, kto sa blíži k väčšiemu vystúpeniu (konferencia, svadobný prípitok, pohovor)</li>
+            </ul>
+          </div>
+          <div class="audience-col no reveal">
+            <h3>Nie je pre teba, ak:</h3>
+            <ul>
+              <li>Hľadáš niekoho, kto ti prejav napíše a odprednesie za teba</li>
+              <li>Nemáš 2–3 hodiny týždenne na cvičenie počas 8 týždňov</li>
+              <li>Očakávaš zázrak bez akejkoľvek vlastnej práce</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCÍP 18 — ZHRNUTIE HODNOTY -->
+    <section class="section">
+      <div class="section-inner">
+        <div class="value-stack reveal">
+          <h2 class="section-title">Čo všetko dostaneš</h2>
+          <ul class="value-list">
+            <li><span>6 modulov + 18 lekcií (7 h obsahu)</span><span>997 €</span></li>
+            <li><span>4 živé tréningové stretnutia</span><span>396 €</span></li>
+            <li><span>Nahrávka vystúpenia pred/po s rozborom</span><span>150 €</span></li>
+            <li><span>Bonus: rozbor najbližšieho vystúpenia</span><span>150 €</span></li>
+          </ul>
+          <div class="value-total">
+            <span>Celková hodnota</span>
+            <span class="strike">1 693 €</span>
+          </div>
+          <div class="value-final">
+            <span>Dnes za</span>
+            <span class="gradient-text">349 €</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCÍP 19 — URGENCIA -->
+    <section class="section alt">
+      <div class="section-inner">
+        <div class="urgency-box reveal">
+          <p>⏳ Na najbližší beh kurzu zostáva <strong id="seatsLeft">4</strong> z 10 miest — pracujem
+            len s malými skupinami, aby mal každý priestor na spätnú väzbu.</p>
+          <p class="urgency-timer">Cena 349 € platí do <span id="countdown">--:--:--:--</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ďalšie CTA -->
+    <section class="cta-strip reveal">
+      <p>Ak si prečítal až sem, pravdepodobne vieš, že je čas niečo zmeniť.</p>
+      <a href="mailto:info@tvojadomena.sk?subject=Konzultácia%20-%20kurz%20rétoriky" class="btn btn-primary cta-btn">
+        Zarezervovať bezplatný hovor
+      </a>
+    </section>
+
+    <!-- PRINCÍP 21 — FAQ -->
+    <section id="faq" class="section">
+      <div class="section-inner">
+        <p class="section-label reveal">Časté otázky</p>
+        <h2 class="section-title reveal">Odpovede skôr, než sa opýtaš</h2>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Čo ak nestíham živé stretnutia kvôli pracovnému rozvrhu?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><p>Každé stretnutie nahrávame a máš ho k dispozícii 12 mesiacov. Tempo si určuješ sám.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Som introvert, zvládnem živé cvičenia pred skupinou?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><p>Áno — presne pre teba je kurz stavaný. Skupina má max. 8 ľudí a postupujeme pomaly, krok po kroku.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Čo ak mi to po prvých lekciách nesadne?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><p>Máš 14-dňovú garanciu vrátenia peňazí, bez otázok.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Ako dlho trvá kurz a koľko času si vyžaduje týždenne?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><p>8 týždňov, cca 2–3 hodiny týždenne vrátane živých stretnutí a cvičenia.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Čo sa stane hneď po prihlásení?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><p>Do 24 hodín ti príde e-mail s termínom vstupného hovoru a prístupom k prvému modulu.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCÍP 20 — ZÁVEREČNÉ CTA -->
+    <section id="final-cta" class="section final-cta">
+      <div class="section-inner">
+        <h2 class="section-title reveal">Si jeden krok od toho, aby ťa na porade konečne počúvali</h2>
+        <a href="mailto:info@tvojadomena.sk?subject=Konzultácia%20-%20kurz%20rétoriky" class="btn btn-primary btn-lg cta-btn reveal">
+          Zarezervovať bezplatný strategický hovor
+        </a>
+        <p class="micro reveal">🔒 Bezpečný kontakt · Bez záväzkov · Garancia vrátenia 14 dní</p>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>&copy; <span id="year"></span> Tvoje Meno. Vytvorené priamo z telefónu.</p>
+    <p>&copy; <span id="year"></span> Rétorika Akadémia. Demo šablóna sales page — nahraď reálnymi údajmi.</p>
+    <p class="footer-contact">info@tvojadomena.sk</p>
   </footer>
+
+  <!-- Sticky mobilné CTA (principle 22: CTA vždy tam, kde je zákazník pripravený kliknúť) -->
+  <div class="sticky-cta">
+    <a href="mailto:info@tvojadomena.sk?subject=Konzultácia%20-%20kurz%20rétoriky" class="btn btn-primary cta-btn">
+      Zarezervovať bezplatný hovor
+    </a>
+  </div>
 
   <script src="script.js"></script>
 </body>
