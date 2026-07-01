@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tvoje Meno — Portfólio</title>
+  <meta name="description" content="Osobná stránka vytvorená s láskou k detailu." />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="progress-bar" id="progressBar"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="logo">Tvoje<span>Meno</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link" data-link>Domov</a></li>
+        <li><a href="#about" class="nav-link" data-link>O mne</a></li>
+        <li><a href="#work" class="nav-link" data-link>Projekty</a></li>
+        <li><a href="#contact" class="nav-link" data-link>Kontakt</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Otvoriť menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-blobs" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="grain"></div>
+      </div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow reveal">Vitaj na mojom webe</p>
+        <h1 class="hero-title">
+          <span class="reveal-line"><span class="reveal">Ahoj, volám sa</span></span>
+          <span class="reveal-line"><span class="reveal gradient-text">Tvoje Meno</span></span>
+        </h1>
+        <p class="hero-subtitle reveal">
+          Toto je moja úplne prvá webová stránka — staviam ju priamo z telefónu
+          a postupne ju budem dopĺňať o vlastný obsah.
+        </p>
+        <div class="hero-cta reveal">
+          <a href="#work" class="btn btn-primary">Pozri projekty</a>
+          <a href="#contact" class="btn btn-ghost">Kontaktuj ma</a>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="Posunúť nižšie">
+        <span></span>
+      </a>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="section-inner">
+        <p class="section-label reveal">O mne</p>
+        <h2 class="section-title reveal">Pár slov na úvod</h2>
+        <div class="about-grid">
+          <p class="about-text reveal">
+            Sem príde tvoj text — kto si, čím sa zaoberáš a čo ťa baví.
+            Táto sekcia je pripravená a čaká len na tvoj obsah.
+          </p>
+          <div class="stats reveal">
+            <div class="stat">
+              <span class="stat-num" data-count="3">0</span>
+              <span class="stat-label">roky skúseností</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="12">0</span>
+              <span class="stat-label">projekty</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="100">0</span>
+              <span class="stat-label">% nadšenia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section work">
+      <div class="section-inner">
+        <p class="section-label reveal">Projekty</p>
+        <h2 class="section-title reveal">Čo som vytvoril</h2>
+        <div class="work-grid">
+          <article class="work-card reveal">
+            <div class="work-card-glow"></div>
+            <span class="work-num">01</span>
+            <h3>Projekt jeden</h3>
+            <p>Krátky popis projektu doplníš neskôr.</p>
+          </article>
+          <article class="work-card reveal">
+            <div class="work-card-glow"></div>
+            <span class="work-num">02</span>
+            <h3>Projekt dva</h3>
+            <p>Krátky popis projektu doplníš neskôr.</p>
+          </article>
+          <article class="work-card reveal">
+            <div class="work-card-glow"></div>
+            <span class="work-num">03</span>
+            <h3>Projekt tri</h3>
+            <p>Krátky popis projektu doplníš neskôr.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="section-inner contact-inner">
+        <p class="section-label reveal">Kontakt</p>
+        <h2 class="section-title reveal">Poďme sa spojiť</h2>
+        <p class="contact-text reveal">Napíš mi na email alebo cez sociálne siete.</p>
+        <a href="mailto:tvoj@email.sk" class="btn btn-primary reveal">Napíš mi</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Tvoje Meno. Vytvorené priamo z telefónu.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
